@@ -1,0 +1,16 @@
+scan_timeout: 10
+max_redirects: 5
+threads: 4
+enable_network_diagnostics: true
+
+export_formats:
+  - json
+  - html
+
+modules:
+  security_headers: true
+  ssl_tls: true
+  dns_whois: true
+  html: true
+  performance: true
+  network: true

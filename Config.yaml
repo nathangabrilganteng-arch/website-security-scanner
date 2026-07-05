@@ -1,0 +1,51 @@
+# Website Security Scanner Configuration
+
+# Global settings
+scan_timeout: 10
+max_redirects: 5
+user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+follow_redirects: true
+verify_ssl: true
+threads: 4
+enable_network_diagnostics: true
+
+# Export settings
+export_formats:
+  - json
+  - html
+
+# Logging settings
+logging:
+  enabled: true
+  level: INFO
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+
+# Scan modules
+modules:
+  security_headers: true
+  ssl_tls: true
+  dns_whois: true
+  html: true
+  performance: true
+  network: true
+
+# Network specific
+network:
+  ping_count: 4
+  speed_test_timeout: 10
+  interface: auto
+
+# Performance thresholds
+performance:
+  max_page_size_mb: 2
+  max_load_time_sec: 3
+  max_requests: 100
+
+# Security scoring
+scoring:
+  ssl_weight: 25
+  headers_weight: 25
+  dns_weight: 15
+  html_weight: 15
+  performance_weight: 10
+  network_weight: 10
